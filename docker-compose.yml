@@ -1,0 +1,17 @@
+version: '3.9'
+
+services:
+  transport_service_db:
+    container_name: transport-service-db
+    image: 'postgres:16'
+    environment:
+      POSTGRES_DB: transport_service
+      POSTGRES_USER: arty
+      POSTGRES_PASSWORD: arty
+    ports:
+      - '5401:5432'
+    volumes:
+      - transport_service_data:/var/lib/postgresql/data
+
+volumes:
+  transport_service_data:
