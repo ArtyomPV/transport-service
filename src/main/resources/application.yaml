@@ -1,0 +1,12 @@
+spring:
+  application:
+    name: transport-service
+
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url: jdbc:postgresql://localhost:5401/transport_service
+    username: arty
+    password: arty
+
+server:
+  port: 8081
