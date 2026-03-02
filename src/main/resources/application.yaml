@@ -8,5 +8,27 @@ spring:
     username: arty
     password: arty
 
+  flyway:
+    # Основные настройки
+    enabled: true
+    baseline-on-migrate: true  # Если БД уже существует
+    baseline-version: 1
+
+    # Настройки миграций
+    locations: classpath:db/migration
+    encoding: UTF-8
+    validate-on-migrate: true
+#    clean-on-validation-error: false
+
+    # SQL-настройки
+    sql-migration-prefix: V
+    sql-migration-separator: __
+    sql-migration-suffixes: .sql
+
+    # Таблицы
+    table: flyway_schema_history
+    schemas: public
+
+
 server:
   port: 8081
